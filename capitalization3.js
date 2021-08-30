@@ -5,3 +5,7 @@ const capName =
   str.substring(3).toLowerCase();
 
 console.log(capName);
+
+const firstLetter =
+  str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+console.log(firstLetter);

@@ -1,3 +1,4 @@
+"use strict";
 const str = "peter";
 const capName =
   str.substring(0, 2).toLowerCase() +

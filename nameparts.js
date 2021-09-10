@@ -1,10 +1,25 @@
-const fullName = "carolyne marie green";
+const fullName = "carolyne marie huynh green";
 console.log(`full name: ${fullName}`);
+getNameParts(fullName);
 
-const firstName = fullName.split(" ", 1);
-const middleName = fullName.split(" ", 2).slice(-1);
-const lastName = fullName.split(" ", 3).slice(-1);
+function getNameParts(fullName) {
+  let firstName = fullName.substring(0, fullName.indexOf(" "));
+  let middleName = fullName.substring(
+    fullName.indexOf(" ") + 1,
+    fullName.lastIndexOf(" ")
+  );
+  let lastName = fullName.substring(fullName.lastIndexOf(" ") + 1);
 
-console.log(`first name: ${firstName}`);
-console.log(`middle name: ${middleName}`);
-console.log(`last name: ${lastName}`);
+  const first = capitalize(firstName);
+  const middle = capitalize(middleName);
+  const last = capitalize(lastName);
+
+  console.log(first, middle, last);
+}
+
+function capitalize(str) {
+  let noSpace = str.trim();
+  let capital =
+    noSpace.substring(0, 1).toUpperCase() + noSpace.substring(1).toLowerCase();
+  return capital;
+}
